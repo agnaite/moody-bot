@@ -22,9 +22,6 @@ def home():
 
     if question:
         response = chatbot.get_response(question)
-        print '*' * 10
-        print type(response.text)
-        print dir(response)
         return jsonify(response.text)
     else:
         return render_template('base.html')
