@@ -1,0 +1,15 @@
+body {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.form-control {
+  width: 83%;
+}
+
+img {
+    width: 10%;
+}
+
+.container {
+    padding-top: 200px;
+}

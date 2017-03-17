@@ -1,24 +1,27 @@
 <html>
 <head>
   <title>what's up dude</title>
-  <link rel="stylesheet" type="text/css" href="static/css/spectre.min.css">
-  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
 </head>
 <body>
-
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <h5>moody bot</h5>
+    </div>
+  </nav>
   <div class="container">
-    <h5>talk to me dude</h5>
-    <fieldset>
-      <form class="columns col-gapless">
-        <div class="column col-3"></div>
-        <input class="column col-4" type="text" id="question">
-        <input class="column col-2" type="submit" id="talk-to-dude" value="talk">
-        <div class="column col-3"></div>
-      </form>
-    </fieldset>
-    <div class="columns">
-      <div class="column col-3"></div>
-      <div class="response column col-6"></div>
+    <form class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <div class="row">
+          <input class="col-sm-10 form-control input-box" type="text" id="question">
+          <button class="btn btn-default col-sm-2" id="talk-to-dude">talk</button>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-sm-offset-2"><img src="static/img/moody.svg"><span class="response"></span></div>
     </div>
   </div>
 
@@ -32,7 +35,7 @@
         var question = $("#question").val()
 
         $.get("/", {question: question}, function(results){
-          $(".response").html(results);
+          $(".response").html(results + " 🐛");
         })
 
       });
