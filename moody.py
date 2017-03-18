@@ -2,7 +2,7 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 chatbot = ChatBot(
-    'Dude',
+    'Andy',
     trainer='chatterbot.trainers.ChatterBotCorpusTrainer',
 )
 
@@ -14,8 +14,11 @@ chatbot.train("chatterbot.corpus.english.emotions")
 
 chatbot.set_trainer(ListTrainer)
 
-for i in range(200):
+
+def train_andy(question, answer):
+    """Train the bot with phrase pairs"""
+
     chatbot.train([
-        "What's up dude?",
-        "What's up dude",
+        question,
+        answer,
     ])
