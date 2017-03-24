@@ -42,10 +42,18 @@
         var question = $("#question").val()
 
         $.get("/", {question: question}, function(results){
-          $(".response").html(results + " 🐛");
+          if (showWorm()) { worm = " 🐛"; } else { worm = ""; }
+
+          $(".response").html(results + worm);
         })
 
       });
+
+      function showWorm() {
+        var probability = Math.random()
+        if (probability > 0.5) { return true; } else { return false; }
+      }
+
     });
   </script>
 </body>
