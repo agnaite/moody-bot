@@ -25,6 +25,6 @@ def home():
 if __name__ == "__main__":
 
     PORT = int(os.environ.get("PORT", 5000))
-    DEBUG = "NO_DEBUG" not in os.environ
+    DEBUG = os.environ.get("DEBUG", True)
 
     app.run(host="0.0.0.0", port=PORT, debug=DEBUG)
