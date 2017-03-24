@@ -8,8 +8,6 @@ from moody import chatbot
 app = Flask(__name__)
 assets = Environment(app)
 
-# assets.url = app.static_url_path
-
 
 @app.route("/")
 def home():
@@ -23,5 +21,6 @@ def home():
         return render_template('base.html')
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+
+#     app.run(debug=True)
