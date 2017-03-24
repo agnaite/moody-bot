@@ -28,4 +28,6 @@ if __name__ == "__main__":
     PORT = int(os.environ.get("PORT", 5000))
     DEBUG = os.environ.get("DEBUG", True)
 
-    app.run(host="0.0.0.0", port=PORT, debug=DEBUG)
+    extra_files = ['./templates/base.html', './static/css/styles.css']
+
+    app.run(host="0.0.0.0", port=PORT, debug=DEBUG, extra_files=extra_files)
