@@ -17,6 +17,7 @@ def home():
 
     if question:
         response = chatbot.get_response(question)
+
         return jsonify(response.text)
     else:
         return render_template('base.html')

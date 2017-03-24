@@ -6,10 +6,14 @@ body {
   width: 83%;
 }
 
-img {
+.moody-face {
     width: 10%;
 }
 
 .container {
     padding-top: 200px;
+}
+
+.typing-bubble {
+    width: 6%;
 }
